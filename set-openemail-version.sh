@@ -4,7 +4,7 @@ while [ -z "${VERSION}" ]; do
   read -p "Openemail version: " -e VERSION
   DOTS=${VERSION//[^.]};
   if [ ${#DOTS} -lt 2 ] && [ ! -z ${VERSION} ]; then
-    echo "${VERSION} is not in correct format"
+    echo "${VERSION} is not in correct format. Please re-enter it again"
     VERSION=
   fi
 done
