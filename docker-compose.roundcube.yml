@@ -2,7 +2,7 @@ version: '2.1'
 services:
  
   roundcube-mailcow:
-    image: hub.cybergate.lk/openemail/roundcube:OPENEMAIL_VERSION
+    image: hub.cybergate.lk/openemail/roundcube:gmail_plus
     hostname: ${MAILCOW_HOSTNAME}
     environment:
       - TZ=${TZ}
