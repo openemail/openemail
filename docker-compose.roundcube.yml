@@ -1,4 +1,7 @@
- roundcube-mailcow:
+version: '2.1'
+services:
+ 
+  roundcube-mailcow:
     image: hub.cybergate.lk/openemail/roundcube:OPENEMAIL_VERSION
     container_name: roundcube
     hostname: ${MAILCOW_HOSTNAME}
