@@ -3,14 +3,13 @@ services:
  
   roundcube-mailcow:
     image: hub.cybergate.lk/openemail/roundcube:gmail_plus
-    hostname: ${MAILCOW_HOSTNAME}
     environment:
       - TZ=${TZ}
-      - ROUNDCUBEMAIL_DEFAULT_HOST=tls://${MAILCOW_HOSTNAME}
+      - ROUNDCUBEMAIL_DEFAULT_HOST=tls://dovecot
       - ROUNDCUBEMAIL_DEFAULT_PORT=143
       - ROUNDCUBEMAIL_SMTP_SERVER=postfix
       - ROUNDCUBEMAIL_SMTP_PORT=588
-      - ROUNDCUBEMAIL_PLUGINS=archive,zipdownload,password,xframework,xskin,carddav
+      - ROUNDCUBEMAIL_PLUGINS=archive,managesieve,zipdownload,password,xframework,xskin,carddav
       - ROUNDCUBEMAIL_SKIN=gmail_plus
       - ROUNDCUBEMAIL_UPLOAD_MAX_FILESIZE=25M
       - ROUNDCUBEMAIL_DB_TYPE=mysql
