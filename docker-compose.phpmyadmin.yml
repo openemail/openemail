@@ -1,7 +1,7 @@
 version: '2.1'
 services:
   phpmyadmin-mailcow:
-    image: openemail/phpmyadmin:1.0.0
+    image: hub.cybergate.lk/openemail/phpmyadmin:1.0.0
     restart: always
     environment:
       - TZ=${TZ}
