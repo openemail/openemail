@@ -7,4 +7,7 @@ echo "Enter database name that you wish to create"
 read -p "Database name: " -e NEWDB
 docker exec -it $(docker ps -f name=mysql-mailcow -q) mysql -uroot -p${DBROOT} -e "CREATE DATABASE ${NEWDB};GRANT ALL PRIVILEGES ON \`${NEWDB}\`.*
 TO ${DBUSER}@'%';FLUSH PRIVILEGES;"
+docker exec -it $(docker ps -f name=mysql-mailcow -q) mysql -uroot -p${DBROOT} -e "SHOW DATABASES;"
+docker exec -it $(docker ps -f name=mysql-mailcow -q) mysql -uroot -p${DBROOT} -e "SHOW GRANTS FOR ${DBUSER};"
+
 
