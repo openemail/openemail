@@ -3,7 +3,6 @@ services:
  
   roundcube-mailcow:
     image: hub.cybergate.lk/openemail/roundcube:OPENEMAIL_VERSION
-    container_name: roundcube
     hostname: ${MAILCOW_HOSTNAME}
     environment:
       - TZ=${TZ}
