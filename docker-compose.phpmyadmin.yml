@@ -1,0 +1,16 @@
+version: '2.1'
+services:
+  phpmyadmin-mailcow:
+    image: openemail/phpmyadmin:1.0.0
+    restart: always
+    environment:
+      - TZ=${TZ}
+      - PMA_HOST=mysql
+      - PMA_ARBITRARY=1
+      - PMA_ABSOLUTE_URI=https://${MAILCOW_HOSTNAME}/pma/
+    dns:
+      - ${IPV4_NETWORK:-172.22.1}.254
+    networks:
+      openemail-network:
+        aliases:
+          - phpmyadmin
